@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>资产配置优化 - 智能投资 - 宽策略全球智能投顾系统</title>
+    <link rel="stylesheet" href="css/kklab.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+
+</head>
+<body>
+    <div id="wrap">
+        <!--左侧 导航栏-->
+        <div id="nav">
+            <div class="logo">
+                <a href="http://103.20.249.126/index.html"></a>
+            </div>
+            <div class="main-menu">
+                <ul>
+                    <li id="tag1"><a href="#"  ><i class="fa fa-pie-chart"></i>组合概括</a></li>
+                    <li id="tag2"><a href="#"  ><i class="fa fa-dollar"></i>热点推荐</a></li>
+                    <li id="tag3"><a href="#"  ><i class="fa fa-user"></i>账户设置</a></li>
+                    <li id="tag4"><a href="#"  ><i class="fa fa-cogs"></i>智能投资</a></li>
+                    <li id="tag5" class="active"><a href="#"  ><i class="fa fa-tachometer"></i>宽客实验室</a><i class="triangle"></i></li>
+                    <li id="tag6"><a href="#"  ><i class="fa fa-database"></i>交易执行</a></li>
+                    <li id="tag7"><a href="#"  ><i class="fa fa-area-chart"></i>绩效分析</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--//页面主体-->
+        <div id="main">
+             <!--loading页面-->
+            <div id="loading" style="display: block;">
+                <div class="loading-text">
+                    <div class="loader">
+                        <div class="loader-inner line-scale">
+                            <div style="display: inline-block;color: white;font-size: 18px">loading...</div>
+                            <div class="loading-circle" style="width:20px;height: 20px;border-radius: 50%;border: 1px solid #c3cce8;display: inline-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 页面 顶部-->
+            <div class="topbar">
+                <div class="top">
+                    <!--<div class="p1 lt"></div>-->
+                    <div class="p4 rt">
+                        <a href="#">
+                            <i class="fa fa-power-off"></i>
+                            退出系统
+                        </a>
+                    </div>
+                    <div class="p3 rt">
+                        <span>站内信息</span>
+                        <a href="#">0条</a>
+                    </div>
+                    <div class="p2 rt">宽策略全球智能投顾</div>
+                </div>
+            </div>
+
+            <div class="container col no-padding">
+                <div class="detail-bar col no-padding">
+                    <div class="lay1 col-12 no-padding">
+                        <div class="big-box col-6 col no-padding">
+                            <div id="line1"></div>
+                        </div>
+                        <div class="col col-3 no-padding">
+                            <div class="pie1">
+                                <div id="pie1"></div>
+                            </div>
+                            <div class="bar1">
+                                <div id="bar1"></div>
+                            </div>
+                        </div>
+                        <div class="col col-3 no-padding">
+                            <div class="pie2">
+                                <div id="pie2"></div>
+                            </div>
+                            <div class="bar2">
+                                <div id="bar2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lay2 col-12 col">
+                        <div class="col-4 pie-chart pie-bgcolor1 col no-padding">
+                            <div id="pie3"></div>
+                        </div>
+                        <div class="col-4 pie-chart pie-bgcolor2 col no-padding">
+                            <div id="pie4"></div>
+                        </div>
+                        <div class="col-4 pie-chart pie-bgcolor3 col no-padding">
+                            <div id="pie5"></div>
+                        </div>
+                    </div>
+                    <div class="lay3 col-12 col">
+                        <div>
+                            <div id="line2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+    <!--底部隐藏表格-->
+    <div id="hide-table">
+        <div id="collapse">展开表格</div>
+        <div class="content">
+            <table>
+                <thead>
+                <tr>
+                    <th>资产类别</th>
+                    <th>当前市值</th>
+                    <th>当前权重</th>
+                    <th>战略权重</th>
+                    <th>配置金额</th>
+                    <th>差额</th>
+                    <th>模型收益率</th>
+                    <th>模型波动率</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                <!--<tr>-->
+                <!--<td>中国股票</td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>-->
+                <!--<td></td>   -->
+                <!--</tr>-->
+                </tbody >
+            </table>
+
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script>
+        $('#collapse').click(function () {
+            $(this).toggleClass('al');
+            if ($(this).hasClass('al')) {
+                $('#hide-table').animate({'bottom': 0});
+                $(this).text('收起表格');
+            } else {
+                $('#hide-table .content').animate({'scrollTop': '0'});
+                $('#hide-table').animate({'bottom': '-300px'});
+                $(this).text('展开表格');
+            }
+        });
+
+        var html = '';
+        var data=[{name:"中国股票",value:0,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"中国基金",value:0,weight:0.0,stratagy:0,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"中国国债（交易）",value:10,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"中国金融债（交易）",value:0,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"中国企业债（交易）",value:0,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"人民币",value:20,weight:0.0,stratagy:0,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"全球货币篮子",value:0,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28},
+            {name:"美国股票",value:30,weight:0.0,stratagy:0.1,convalue:100,diff:0.0,modelgain:92,modelvariable:28}];
+
+        $.each(data, function(i, d){
+            html +=`
+        <tr>
+            <td>${d.name}</td>
+            <td>${d.value}</td>
+            <td>${d.weight}%</td>
+            <td>${d.stratagy}%</td>
+            <td>${d.convalue}</td>
+            <td>${d.diff}</td>
+            <td>${d.modelgain}%</td>
+            <td>${d.modelvariable}%</td>
+        </tr>
+        `;
+        });
+        $('tbody').html(html);
+
+    </script>
+    <script>
+        $(".main-menu ul").on("click","li>a",function(e){
+            e.preventDefault();
+//            切换标签显示
+            $("i.triangle").remove();
+            var $target=$(e.target);
+            $target.parent().addClass("active")
+                    .siblings(".active")
+                    .removeClass("active");
+
+
+            var html = '<i class="triangle"></i>';
+            $target.parent().append(html);
+//            $target.parent().siblings().children(".triangle").remove();
+        })
+    </script>
+    <script src="js/paint.js"></script>
+    <!--<script src="js/kklab.js"></script>-->
+</body>
+</html>

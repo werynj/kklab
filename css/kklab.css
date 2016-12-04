@@ -1,0 +1,447 @@
+/*公共样式*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /*overflow: hidden;*/
+}
+.col{
+    float: left;
+    padding: 0 10px;
+}
+.no-padding{
+    padding: 0;
+}
+.lt{float: left}
+.rt{float: right}
+.clear{clear: both}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+body{
+    width: 1350px;
+    font-family: "微软雅黑","黑体";
+}
+.col-1 {width:8.33%}
+.col-2 {width:16.67%}
+.col-3 {width:25%}
+.col-4 {width:33.33%}
+.col-5 {width:41.67%}
+.col-6 {width:50%}
+.col-7 {width:58.33%}
+.col-8 {width:66.67%}
+.col-9 {width:75%}
+.col-10 {width:83.33%}
+.col-11 {width:91.67%}
+.col-12 {width:100%}
+
+/*左侧导航栏设置*/
+#wrap{
+    background-image: -moz-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
+    width:100%;
+    min-height:1000px;
+    position:relative;
+    /*z-index: 0;*/
+    /*padding-left: 13.3%;*/
+}
+#nav{
+    width: 13.3%;
+    font-size:15px;
+    background: #FFFFFF;
+    height: 662px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#nav .logo{
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height:65px;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 100%;
+}
+#nav .logo a{
+
+}
+#nav ul{
+    /*height: 490px;*/
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+}
+#nav ul li{
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    /*padding: 10px 0 0 0;*/
+    line-height: 60px;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    /*transition: 1s;*/
+    position: relative;
+}
+#nav ul li a{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    color: #000;
+    text-decoration:none;
+    font-size: 18px;
+    color: #000;
+    overflow: hidden;
+
+}
+
+#nav .main-menu li.active{
+    background:#ffd50f;
+    -moz-box-shadow: 2px 0 4px #aeaeae;
+    -webkit-box-shadow: 2px 0 4px #aeaeae;
+    box-shadow: 2px 0 4px #aeaeae;
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aeaeae')";*/
+    /*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aeaeae');*/
+}
+#nav .main-menu .triangle{
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-right:10px solid #000;
+    position:absolute;
+    top:20px;
+    right:0;
+    display: block;
+
+}
+#nav ul li a .fa{
+    margin-right: 5px;
+    line-height: 40px;
+    width: 18px;
+}
+/*右边主体样式*/
+#main{
+    width: 100%;
+    padding-left:13.3%;
+    position:relative;
+    right:0;
+    top:0;
+    /*z-index:0;*/
+    padding-bottom:120px;
+}
+#main:after{
+    content: ' ';
+    display: table;/*防止最后个子元素margin-bottom越界*/
+    clear: both; /*清除子元素浮动的影响*/
+}
+ /*loadin*/
+#loading{
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: rgba(255,255,255,0.2);
+    position: fixed;
+    display: none;
+}
+#loading .loading-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@-ms-keyframes  scroll {
+    0%{
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);		/* IE 9 */
+        -webkit-transform: rotate(360deg);	/* Safari and Chrome */
+        -o-transform: rotate(360deg);		/* Opera */
+        -moz-transform: rotate(360deg);		/* Firefox */
+    }
+}
+@-webkit-keyframes  scroll {
+    0%{
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);		/* IE 9 */
+        -webkit-transform: rotate(360deg);	/* Safari and Chrome */
+        -o-transform: rotate(360deg);		/* Opera */
+        -moz-transform: rotate(360deg);		/* Firefox */
+    }
+}
+@-o-keyframes  scroll {
+    0%{
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);		/* IE 9 */
+        -webkit-transform: rotate(360deg);	/* Safari and Chrome */
+        -o-transform: rotate(360deg);		/* Opera */
+        -moz-transform: rotate(360deg);		/* Firefox */
+    }
+}
+@-moz-keyframes  scroll {
+    0%{
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);		/* IE 9 */
+        -webkit-transform: rotate(0deg);	/* Safari and Chrome */
+        -o-transform: rotate(0deg);		/* Opera */
+        -moz-transform: rotate(0deg);		/* Firefox */
+    }
+    100%{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);		/* IE 9 */
+        -webkit-transform: rotate(360deg);	/* Safari and Chrome */
+        -o-transform: rotate(360deg);		/* Opera */
+        -moz-transform: rotate(360deg);		/* Firefox */
+    }
+}
+#loading .loading-circle{
+    animation-name:scroll;
+    animation-duration:0.1s;
+    animation-timing-function:linear;
+    animation-delay:0s;
+    animation-iteration-count:infinite;
+    animation-direction:reverse;
+    animation-fill-mode:both;
+}
+ /*顶部样式*/
+ #main .topbar{
+     width: 100%;
+     position: fixed;
+     height: 70px;
+     text-align: center;
+     top: 0;
+     left: 0;left: 0;
+     z-index: 20;
+     /*padding-left: 13.3%;*/
+     /*float: left;*/
+ }
+ #main .topbar:after {
+     content: ' ';
+     display: table;/*防止最后个子元素margin-bottom越界*/
+     clear: both; /*清除子元素浮动的影响*/
+ }
+ #main .top{
+     width: 100%;
+     height: 70px;
+     background: #561FA0;
+     position: relative;
+ }
+/*#main .top .p1{width: 20%; min-height: 5px;}*/
+#main .top .p2{
+    width: 70%;
+    font-size:20px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:#fff;
+    font-weight: bolder;
+    height: 70px;
+    line-height: 70px;
+    word-spacing: 0.3em;
+    letter-spacing: 0.3em;
+    line-height: 70px;
+    padding-left: 20%;
+}
+#main .top .p3{
+    width: 20%;line-height: 70px;color: #BF9DEC;
+    padding-right: 10px;
+    font-size: 15px;
+}
+#main .top .p3 a{
+    line-height: 70px;
+    font-size: 18px;
+    display: inline-block;
+    color: white;
+}
+#main .top .p4{width: 10%;line-height: 70px;display: inline-block}
+#main .top .p4 a{
+    margin-top: 18px;
+    display: inline-block;
+    min-height: 30px !important;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    background: #AC2F31;
+    border-radius: 5px;
+    line-height: 30px;
+}
+/*chart*/
+#main .container{
+    width: 100%;
+    position: relative;
+    /*background-color: #2A293B;*/
+    top: 70px;
+    min-height: 20px;
+}
+main .container:after {
+    content: ' ';
+    display: table;/*防止最后个子元素margin-bottom越界*/
+    clear: both; /*清除子元素浮动的影响*/
+}
+#main .detail-bar:after {
+    content: ' ';
+    display: table;/*防止最后个子元素margin-bottom越界*/
+    clear: both; /*清除子元素浮动的影响*/
+}
+#main .detail-bar{
+    color: #fff;
+    /*overflow: hidden;*/
+    height: auto;
+    font-size: 16px;
+    width: 100%;
+    /*float: left;*/
+}
+#main .lay1:after {
+    content: ' ';
+    display: table;/*防止最后个子元素margin-bottom越界*/
+    clear: both; /*清除子元素浮动的影响*/
+}
+#main .lay2{
+    margin-top: 30px;
+}
+#main.big-box{
+    background-color: #151923;
+    height: 520px;
+}
+#main .pie1{
+    background: #252436;
+    height: 233px;
+}
+#main .bar1{
+    background: #201F31;
+    height: 233px;
+ }
+#main .pie1,#main .bar1,#main .pie2,#main .bar2{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    padding: 15px;
+}
+#main .pie2{
+    background: #252437;
+    height: 233px;
+}
+#main .bar2{
+    background: #201F32;
+    height: 233px;
+}
+
+#line1,#line2{
+    height: 450px;
+    margin-bottom: -20px;
+}
+#main .pie-chart{
+    height: 260px;
+    position: relative;
+    padding: 15px;
+}
+#main .pie-bgcolor3{
+    background-image: -moz-linear-gradient( 103deg, rgb(130,17,17) 0%, rgb(182,51,51) 100%);
+    background-image: -webkit-linear-gradient( 103deg, rgb(130,17,17) 0%, rgb(182,51,51) 100%);
+    background-image: -ms-linear-gradient( 103deg, rgb(130,17,17) 0%, rgb(182,51,51) 100%);
+}
+
+#main .pie-bgcolor1{
+    background-image: -moz-linear-gradient( 103deg, rgb(68,9,119) 0%, rgb(116,32,188) 100%);
+    background-image: -webkit-linear-gradient( 103deg, rgb(68,9,119) 0%, rgb(116,32,188) 100%);
+    background-image: -ms-linear-gradient( 103deg, rgb(68,9,119) 0%, rgb(116,32,188) 100%);
+}
+
+#main .pie-bgcolor2{
+    background-image: -moz-linear-gradient( 103deg, rgb(17,27,101) 0%, rgb(42,54,147) 100%);
+    background-image: -webkit-linear-gradient( 103deg, rgb(17,27,101) 0%, rgb(42,54,147) 100%);
+    background-image: -ms-linear-gradient( 103deg, rgb(17,27,101) 0%, rgb(42,54,147) 100%);
+}
+
+.pie-chart,.big-box{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+
+#main.lay3{
+    margin-left: 30px;
+    height: 500px;
+}
+
+#pie1,
+#pie2,
+#bar1,
+#bar2{
+    height: 200px;
+}
+
+#pie3,
+#pie4,
+#pie5{
+    height: 230px
+}
+
+/*底部表格*/
+#hide-table{
+    width: 100%;
+    padding-left: 13.3%;
+    min-height: 50px;
+    position:fixed;
+    z-index: 10;
+    bottom: -300px;
+}
+#collapse{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    background:#ffae00 ;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-size: 15px;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+}
+#hide-table .content{
+    width: 100%;
+    height: 340px;
+    padding: 10px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.8);
+    text-align: center;
+    background: #EAEAEA;
+}
+
+#hide-table table{
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+
+}
+#hide-table table tr{
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+/*#hide-table table thead{*/
+    /*font-weight: bold;*/
+/*}*/
+/*#hide-table table tbody{*/
+    /*font-weight: normal;*/
+/*}*/
