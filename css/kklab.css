@@ -52,7 +52,7 @@ body{
     width: 13.3%;
     font-size:15px;
     background: #FFFFFF;
-    height: 662px;
+    height:100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -128,7 +128,7 @@ body{
     width: 100%;
     padding-left:13.3%;
     position:relative;
-    right:0;
+    /*left:0;*/
     top:0;
     /*z-index:0;*/
     padding-bottom:120px;
@@ -234,7 +234,7 @@ body{
      height: 70px;
      text-align: center;
      top: 0;
-     left: 0;left: 0;
+     left: 0;
      z-index: 20;
      /*padding-left: 13.3%;*/
      /*float: left;*/
@@ -292,7 +292,7 @@ body{
 /*chart*/
 #main .container{
     width: 100%;
-    position: relative;
+    position: fixed;
     /*background-color: #2A293B;*/
     top: 70px;
     min-height: 20px;
