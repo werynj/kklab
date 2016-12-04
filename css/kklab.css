@@ -21,7 +21,7 @@ ul li{
     list-style: none;
 }
 body{
-    width: 1350px;
+
     font-family: "微软雅黑","黑体";
 }
 .col-1 {width:8.33%}
@@ -39,6 +39,7 @@ body{
 
 /*左侧导航栏设置*/
 #wrap{
+    width: 1350px;
     background-image: -moz-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
     background-image: -ms-linear-gradient( 90deg, rgb(8,7,26) 0%, rgb(26,25,44) 55%, rgb(44,43,61) 100%);
@@ -292,7 +293,7 @@ body{
 /*chart*/
 #main .container{
     width: 100%;
-    position: fixed;
+    position: relative;
     /*background-color: #2A293B;*/
     top: 70px;
     min-height: 20px;
