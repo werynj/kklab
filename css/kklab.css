@@ -253,7 +253,7 @@ body{
  }
 /*#main .top .p1{width: 20%; min-height: 5px;}*/
 #main .top .p2{
-    width: 70%;
+    width: 65%;
     font-size:20px;
     white-space:nowrap;
     overflow:hidden;
@@ -265,10 +265,10 @@ body{
     word-spacing: 0.3em;
     letter-spacing: 0.3em;
     line-height: 70px;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 #main .top .p3{
-    width: 20%;line-height: 70px;color: #BF9DEC;
+    width: 25%;line-height: 70px;color: #BF9DEC;
     padding-right: 10px;
     font-size: 15px;
 }
@@ -426,6 +426,7 @@ main .container:after {
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.8);
     text-align: center;
     background: #EAEAEA;
+    overflow: scroll;
 }
 
 #hide-table table{
